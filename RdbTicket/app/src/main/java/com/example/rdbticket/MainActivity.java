@@ -16,27 +16,42 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-
+    TextView txtResult;
+    EditText txtPiece;
+    RadioGroup rgGender, rgType;
+    String outputStr = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        Button button = (Button) findViewById(R.id.button);
-        
+        txtResult = findViewById(R.id.txtResult);
+        txtPiece = findViewById(R.id.editTextNumber);
+        RadioButton rdbBoy = (RadioButton) findViewById(R.id.rdbBoy);
+        RadioButton rdbGirl = (RadioButton) findViewById(R.id.rdbGirl);
+        RadioButton rdbAdult = (RadioButton) findViewById(R.id.rdbAdult);
+        RadioButton rdbStudent = (RadioButton) findViewById(R.id.rdbStudent);
+        RadioButton rdbChild = (RadioButton) findViewById(R.id.rdbChild);
+        // 找到 RadioGroup
+        rgGender = findViewById(R.id.rgGender);
+        rgType = findViewById(R.id.rgType);
+
+        // 為 RadioGroup 設置監聽器
+        //rgGender.setOnCheckedChangeListener(radioGroupCheckedChangeListener);
+        //rgType.setOnCheckedChangeListener(radioGroupCheckedChangeListener);
+        Button button = (Button)findViewById(R.id.button);
+        Button btnCheck = (Button)findViewById(R.id.btnCheck);
+
+
+
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String outputStr = "";
+                //String outputStr = "";
                 int price = 0;
                 int outputPiece;
-                RadioButton rdbBoy = (RadioButton) findViewById(R.id.rdbBoy);
-                RadioButton rdbGirl = (RadioButton) findViewById(R.id.rdbGirl);
-                RadioButton rdbAdult = (RadioButton) findViewById(R.id.rdbAdult);
-                RadioButton rdbStudent = (RadioButton) findViewById(R.id.rdbStudent);
-                RadioButton rdbChild = (RadioButton) findViewById(R.id.rdbChild);
-                TextView txtResult = (TextView) findViewById(R.id.txtResult);
-                EditText txtPiece = (EditText) findViewById(R.id.editTextNumber);
+
                 outputPiece = Integer.parseInt(txtPiece.getText().toString());
 
                 if (rdbBoy.isChecked() & rdbAdult.isChecked()){
@@ -71,16 +86,20 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 outputStr += Integer.toString(outputPiece) + "張\n";
-                outputStr += "金額 " + price * outputPiece + "元";
+                outputStr += "金額 " + price * outputPiece + "元\n";
                 txtResult.setText(outputStr);
-                /*Intent intent = new Intent();
-                intent.setClass(MainActivity.this,MainActivity3.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("textview",txtResult.getText().toString());
-                intent.putExtras(bundle);
-                startActivity(intent);*/
+
             }
         });
+        btnCheck.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                intent.putExtra("result", outputStr);
+                startActivity(intent);
+            }
+        });
     }
+
 }
