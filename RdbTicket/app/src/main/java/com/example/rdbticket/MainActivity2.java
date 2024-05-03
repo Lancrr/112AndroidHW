@@ -14,7 +14,7 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         String all;
-        String a = "訂單明細:\n";
+        String a = getResources().getString(R.string.detail)+"\n";
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main2);
