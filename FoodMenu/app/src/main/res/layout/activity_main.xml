@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -9,10 +10,130 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="你點的餐點如下"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.155"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.408" />
+
+    <CheckBox
+        android:id="@+id/chkburger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="72dp"
+        android:text="漢堡"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/chkfrenchfry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="72dp"
+        android:text="薯條"
+        app:layout_constraintStart_toEndOf="@+id/chkburger"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/chkcola"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="156dp"
+        android:text="可樂"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/chksoup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="168dp"
+        android:text="玉米濃湯"
+        app:layout_constraintStart_toEndOf="@+id/chkcola"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="380dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgburger"
+            android:layout_width="93dp"
+            android:layout_height="104dp"
+            android:visibility="gone"
+            app:srcCompat="@mipmap/burger" />
+
+        <ImageView
+            android:id="@+id/imgfrenchfry"
+            android:layout_width="97dp"
+            android:layout_height="85dp"
+            android:visibility="gone"
+            app:srcCompat="@mipmap/frenchfry" />
+
+        <ImageView
+            android:id="@+id/imgcola"
+            android:layout_width="105dp"
+            android:layout_height="85dp"
+            android:visibility="gone"
+            app:srcCompat="@mipmap/softdrink" />
+
+        <ImageView
+            android:id="@+id/imgsoup"
+            android:layout_width="121dp"
+            android:layout_height="105dp"
+            android:visibility="gone"
+            app:srcCompat="@mipmap/soup" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="28dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintStart_toStartOf="@+id/chkburger"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/burger" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintStart_toStartOf="@+id/chkfrenchfry"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/frenchfry" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="49dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="148dp"
+        app:layout_constraintStart_toStartOf="@+id/chkcola"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/softdrink" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="72dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="156dp"
+        app:layout_constraintStart_toEndOf="@+id/chksoup"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/soup" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
