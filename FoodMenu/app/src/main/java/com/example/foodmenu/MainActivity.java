@@ -9,8 +9,8 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private CheckBox chkBurger, chkFrenchFry, chkCola, chkSoup;
-    private ImageView imgBurger, imgFrenchFry, imgCola, imgSoup;
+    private CheckBox chkBurger, chkFrenchFry, chkCola, chkSoup, chkCoffee;
+    private ImageView imgBurger, imgFrenchFry, imgCola, imgSoup, imgCoffee;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,11 +20,13 @@ public class MainActivity extends AppCompatActivity {
         chkFrenchFry = findViewById(R.id.chkfrenchfry);
         chkCola = findViewById(R.id.chkcola);
         chkSoup = findViewById(R.id.chksoup);
+        chkCoffee = findViewById(R.id.chkcoffee);
 
         imgBurger = findViewById(R.id.imgburger);
         imgFrenchFry = findViewById(R.id.imgfrenchfry);
         imgCola = findViewById(R.id.imgcola);
         imgSoup = findViewById(R.id.imgsoup);
+        imgCoffee = findViewById(R.id.imgcoffee);
 
         chkBurger.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
@@ -55,6 +57,14 @@ public class MainActivity extends AppCompatActivity {
                 imgSoup.setVisibility(View.VISIBLE);
             } else {
                 imgSoup.setVisibility(View.GONE);
+            }
+        });
+
+        chkCoffee.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                imgCoffee.setVisibility(View.VISIBLE);
+            } else {
+                imgCoffee.setVisibility(View.GONE);
             }
         });
     }

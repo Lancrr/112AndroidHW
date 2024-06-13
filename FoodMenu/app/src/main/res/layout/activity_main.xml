@@ -14,10 +14,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.155"
+        app:layout_constraintHorizontal_bias="0.148"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.408" />
+        app:layout_constraintVertical_bias="0.459" />
 
     <CheckBox
         android:id="@+id/chkburger"
@@ -69,31 +69,38 @@
 
         <ImageView
             android:id="@+id/imgburger"
-            android:layout_width="93dp"
-            android:layout_height="104dp"
+            android:layout_width="71dp"
+            android:layout_height="64dp"
             android:visibility="gone"
             app:srcCompat="@mipmap/burger" />
 
         <ImageView
             android:id="@+id/imgfrenchfry"
-            android:layout_width="97dp"
-            android:layout_height="85dp"
+            android:layout_width="74dp"
+            android:layout_height="56dp"
             android:visibility="gone"
             app:srcCompat="@mipmap/frenchfry" />
 
         <ImageView
             android:id="@+id/imgcola"
-            android:layout_width="105dp"
-            android:layout_height="85dp"
+            android:layout_width="100dp"
+            android:layout_height="73dp"
             android:visibility="gone"
             app:srcCompat="@mipmap/softdrink" />
 
         <ImageView
             android:id="@+id/imgsoup"
-            android:layout_width="121dp"
-            android:layout_height="105dp"
+            android:layout_width="82dp"
+            android:layout_height="60dp"
             android:visibility="gone"
             app:srcCompat="@mipmap/soup" />
+
+        <ImageView
+            android:id="@+id/imgcoffee"
+            android:layout_width="80dp"
+            android:layout_height="67dp"
+            android:visibility="gone"
+            app:srcCompat="@mipmap/coffee" />
     </LinearLayout>
 
     <ImageView
@@ -135,5 +142,25 @@
         app:layout_constraintStart_toEndOf="@+id/chksoup"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/soup" />
+
+    <CheckBox
+        android:id="@+id/chkcoffee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="232dp"
+        android:text="咖啡"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="62dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="224dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/coffee" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
